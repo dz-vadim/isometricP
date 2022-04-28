@@ -11,4 +11,13 @@ public class Bullet : MonoBehaviour
         rb.AddForce(transform.right * 10f, ForceMode2D.Impulse);
         Destroy(gameObject, 10f);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<Enemy>().EnemyDamage();
+        }
+        Destroy(gameObject);
+    }
 }

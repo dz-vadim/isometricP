@@ -7262,6 +7262,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255e88eaf386d264ebe19a65eee63e9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 3
+  healthBar: {fileID: 2146859843}
+  healthImages:
+  - {fileID: 21300000, guid: dedefe860b886924d8f17daa5713c008, type: 3}
+  - {fileID: 21300000, guid: a17cb09abb26a5b41b0f1d41886716bd, type: 3}
+  - {fileID: 21300000, guid: 4777ec6b9a4b3854b980ca0c9799d224, type: 3}
+  - {fileID: 21300000, guid: 415da145e175d8045bb264d422aef928, type: 3}
 --- !u!1 &978560539
 GameObject:
   m_ObjectHideFlags: 0
@@ -7864,7 +7871,7 @@ GameObject:
   - component: {fileID: 1717650084}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8001,6 +8008,7 @@ MonoBehaviour:
   patrol: {fileID: 1717650083}
   destination: {fileID: 1717650080}
   target: {fileID: 956134490}
+  enemyHealth: 5
 --- !u!1 &1849247654
 GameObject:
   m_ObjectHideFlags: 0

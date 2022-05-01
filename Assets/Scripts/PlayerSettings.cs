@@ -18,11 +18,12 @@ public class PlayerSettings : MonoBehaviour
     {
 
     }
+
     public void Damage(Vector3 enemyPosition)
     {
         health--;
-        Vector3 impuls = enemyPosition - transform.position;
-        transform.Translate(-impuls * 3f);
+        Vector3 impulse = enemyPosition - transform.position;
+        transform.Translate(-impulse * 3f);
         if (health <= 0 )
         {
             Destroy(gameObject);

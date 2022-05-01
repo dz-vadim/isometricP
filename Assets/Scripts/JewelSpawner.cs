@@ -6,16 +6,26 @@ using UnityEngine.UI;
 public class JewelSpawner : MonoBehaviour
 {
     public GameObject jewel;
+    public GameObject victoryUI;
     public int jewelCount = 0;
+    public int jewelOnlevel = 0;
     public Text jewelText;
+
     void Start()
     {
+        victoryUI.SetActive(false);
+        Time.timeScale = 1;
         StartCoroutine(nameof(spawn));
     }
 
     private void Update()
     {
-        jewelText.text = "Coins: " + jewelCount.ToString();
+        jewelText.text = jewelCount.ToString() + "/" + jewelOnlevel.ToString();
+        if (jewelCount >= jewelOnlevel)
+        {
+            Time.timeScale = 0;
+            victoryUI.SetActive(true);
+        }
     }
 
     IEnumerator spawn()

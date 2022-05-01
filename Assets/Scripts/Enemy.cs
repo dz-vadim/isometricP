@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Pathfinding;
 
 public class Enemy : MonoBehaviour
@@ -9,6 +10,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] AIDestinationSetter destination;
     [SerializeField] GameObject target;
     [SerializeField] int enemyHealth = 5;
+    [SerializeField] Slider hpSlider;
+
+    private void Start()
+    {
+        hpSlider.maxValue = enemyHealth;
+        hpSlider.value = enemyHealth;        
+    }
+
     void FixedUpdate()
     {
         float distance = Vector2.Distance(transform.position, target.transform.position);
@@ -35,6 +44,8 @@ public class Enemy : MonoBehaviour
     public void EnemyDamage()
     {
         enemyHealth--;
+        hpSlider.value = enemyHealth;
+
         gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         Invoke(nameof(SetColor), 0.2f);
         if (enemyHealth <= 0)
@@ -42,6 +53,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void SetColor()
     {
         gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; //!!!!!!!!!!!!!!!!!__________________new code 
 using Pathfinding;
 
 public class Enemy : MonoBehaviour
@@ -10,12 +10,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] AIDestinationSetter destination;
     [SerializeField] GameObject target;
     [SerializeField] int enemyHealth = 5;
-    [SerializeField] Slider hpSlider;
+    [SerializeField] Slider hpSlider; //!!!!!!!!!!!!!!!!!__________________new code 
 
     private void Start()
     {
-        hpSlider.maxValue = enemyHealth;
-        hpSlider.value = enemyHealth;        
+        hpSlider.maxValue = enemyHealth; //!!!!!!!!!!!!!!!!!__________________new code 
+        hpSlider.value = enemyHealth; //!!!!!!!!!!!!!!!!!__________________new code        
     }
 
     void FixedUpdate()
@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     public void EnemyDamage()
     {
         enemyHealth--;
-        hpSlider.value = enemyHealth;
+        hpSlider.value = enemyHealth; //!!!!!!!!!!!!!!!!!__________________new code        
 
         gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         Invoke(nameof(SetColor), 0.2f);

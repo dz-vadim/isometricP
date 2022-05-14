@@ -5,7 +5,7 @@ public class UIController : MonoBehaviour
 {
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu"); //add levels
     }
     public void RestartCurrentLevel()
     {

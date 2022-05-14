@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject target;
     [SerializeField] int enemyHealth = 5;
     [SerializeField] Slider hpSlider; //!!!!!!!!!!!!!!!!!__________________new code 
+    bool isPlayerHit; // реакція на потріл
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         float distance = Vector2.Distance(transform.position, target.transform.position);
-        if (distance < 3f)
+        if (distance < 3f || isPlayerHit) // реакція на потріл
         {
             patrol.enabled = false;
             destination.enabled = true;
@@ -43,6 +44,7 @@ public class Enemy : MonoBehaviour
 
     public void EnemyDamage()
     {
+        isPlayerHit = true; // реакція на потріл
         enemyHealth--;
         hpSlider.value = enemyHealth; //!!!!!!!!!!!!!!!!!__________________new code        
 

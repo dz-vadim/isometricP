@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class MenuManager : MonoBehaviour
 {
     public void StartNewGame()
@@ -9,12 +8,10 @@ public class MenuManager : MonoBehaviour
         Debug.Log("StartNewGame");
         SceneManager.LoadScene(1);
     }
-
     public void OpenSettings() 
     {
         Debug.Log("OpenSettings");
     }
-
     public void ExitGame() 
     {
         Debug.Log("ExitGame");
